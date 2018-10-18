@@ -14,3 +14,27 @@ discovery.zen.minimum_master_nodes: 1
 ## see https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
 #
 discovery.type: single-node
+
+## CTO custom
+# Enable Audit Log
+xpack.security.audit.enabled: true
+
+# Default ElasticSearch User and Password
+# elasticsearch.username: elastic
+# elasticsearch.password: changeme
+
+# Password for User kibana
+elasticsearch.password: kibanapassword
+
+# Password for User logstash_system
+xpack.monitoring.elasticsearch.password: logstashpassword
+
+# Password and User for Beats 
+xpack.monitoring.elasticsearch.username: beats_system
+xpack.monitoring.elasticsearch.password: beatspassword
+
+# Password and User for APM
+xpack.monitoring.elasticsearch.username: apm_system
+xpack.monitoring.elasticsearch.password: apmserverpassword
+
+
