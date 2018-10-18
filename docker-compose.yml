@@ -27,7 +27,7 @@ services:
       - cluster.name=cto-elk-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - "discovery.zen.ping.unicast.hosts=elk-elasticsearch"
+      - "discovery.zen.ping.unicast.hosts=dockerelk_elasticsearch_1"
     ulimits:
       memlock:
         soft: -1
