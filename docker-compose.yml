@@ -13,7 +13,7 @@ services:
         hard: -1
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
-      - /var/lib/docker/ELK/es1:/usr/share/elasticsearch/data
+      - /var/lib/docker/es-data/es1:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
       - 9300:9300
@@ -33,7 +33,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - /var/lib/docker/ELK/es2:/usr/share/elasticsearch/data
+      - /var/lib/docker/es-data/es2:/usr/share/elasticsearch/data
     networks:
       - elk
 
