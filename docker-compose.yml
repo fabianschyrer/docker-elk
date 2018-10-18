@@ -2,7 +2,7 @@ version: '2.2'
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
-    container_name: elk-elasticsearch
+    container_name: dockerelk_elasticsearch_1
     environment:
       - cluster.name=cto-elk-cluster
       - bootstrap.memory_lock=true
@@ -22,7 +22,7 @@ services:
 
   elasticsearch2:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
-    container_name: elk-elasticsearch2
+    container_name: dockerelk_elasticsearch_2
     environment:
       - cluster.name=cto-elk-cluster
       - bootstrap.memory_lock=true
@@ -40,7 +40,6 @@ services:
   logstash:
     build:
       context: logstash/
-      container_name: elk-logstash
       args:
         ELK_VERSION: $ELK_VERSION
     volumes:
@@ -59,7 +58,6 @@ services:
   kibana:
     build:
       context: kibana/
-      container_name: elk-kibana
       args:
         ELK_VERSION: $ELK_VERSION
     volumes:
