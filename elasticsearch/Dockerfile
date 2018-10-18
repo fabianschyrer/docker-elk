@@ -10,7 +10,7 @@ FROM docker.elastic.co/elasticsearch/elasticsearch:5.5.3
 RUN elasticsearch-plugin install repository-s3
 # RUN elasticsearch-plugin install x-pack
 RUN elasticsearch-plugin install ingest-attachment
-RUN elasticsearch-plugin install ingest-user-agent
+# RUN elasticsearch-plugin install ingest-user-agent
 RUN elasticsearch-plugin install discovery-file
 RUN elasticsearch-plugin install discovery-ec2
 RUN elasticsearch-plugin install analysis-icu
