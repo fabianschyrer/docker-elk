@@ -12,6 +12,7 @@ services:
         soft: -1
         hard: -1
     volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
       - /var/lib/docker/ELK/es1:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
@@ -26,7 +27,7 @@ services:
       - cluster.name=cto-elk-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - "discovery.zen.ping.unicast.hosts=elasticsearch"
+      - "discovery.zen.ping.unicast.hosts=elk-elasticsearch"
     ulimits:
       memlock:
         soft: -1
